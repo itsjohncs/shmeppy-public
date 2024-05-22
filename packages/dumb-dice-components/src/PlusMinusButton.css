@@ -1,0 +1,74 @@
+.plus-minus-tray-button {
+    position: relative;
+    display: flex;
+    width: min-content;
+    user-select: none;
+}
+
+.plus-minus-tray-button .count {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    line-height: 16px;
+    vertical-align: middle;
+    border-radius: 8px;
+    height: 16px;
+    padding: 0 6px;
+    background-color: #666;
+}
+
+.plus-minus-tray-button .minus,
+.plus-minus-tray-button .plus {
+    cursor: pointer;
+    margin: 0;
+    background: none;
+    white-space: nowrap;
+    height: 30px;
+    background-color: #fff;
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 0 8px;
+    transition:
+        background-color 100ms linear,
+        border-color 100ms linear;
+    border-radius: 3px;
+    border: 1px solid #fff;
+}
+
+.plus-minus-tray-button .minus {
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.plus-minus-tray-button .plus:not(.alone) {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.plus-minus-tray-button .spacer {
+    background-color: #ccc;
+    width: 1px;
+}
+
+.plus-minus-tray-button .minus:disabled + .spacer {
+    background-color: #7e7e7e;
+}
+
+.plus-minus-tray-button .minus:not(:disabled):hover,
+.plus-minus-tray-button .plus:not(:disabled):hover {
+    border-color: #d9d9d9;
+    background-color: #d9d9d9;
+}
+
+.plus-minus-tray-button .minus:disabled,
+.plus-minus-tray-button .plus:disabled {
+    cursor: default;
+    color: #000;
+    border-color: #7e7e7e;
+    background: #7e7e7e;
+}
