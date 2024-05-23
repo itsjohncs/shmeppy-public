@@ -1,0 +1,42 @@
+.button-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007e78;
+    border: 1px solid #007e78;
+    color: #f0f0f0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition:
+        background-color 100ms linear,
+        border-color 100ms linear;
+    user-select: none;
+    font-size: 11px;
+}
+
+.button-base:hover {
+    background-color: #00736d;
+    border-color: #00736d;
+
+    /**
+     * Necessary if the button is made with an anchor tag.
+     */
+    text-decoration: none;
+}
+
+.button-base:disabled {
+    cursor: default;
+    color: #f0f0f0;
+    border: 1px solid #7e7e7e;
+    background: #7e7e7e;
+}
+
+.button-base:not(.button-base-on-light-background):disabled {
+    color: #000;
+}
+
+.button-base:not(.button-base-on-light-background):focus {
+    border-color: #ddd;
+    outline: none;
+}
