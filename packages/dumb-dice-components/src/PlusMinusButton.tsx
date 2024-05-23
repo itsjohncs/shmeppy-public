@@ -1,5 +1,5 @@
 import type {MouseEvent, ReactElement} from "react";
-import {useCallback} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 import {classNames} from "@shmeppy/client-utils";
 
@@ -55,8 +55,14 @@ function PlusMinusButton({
         [onMinus],
     );
 
-    const showMinusButton =
-        forceShowMinusButton || navigator.maxTouchPoints > 0;
+    const [showMinusButton, setShowMinusButton] =
+        useState(!!forceShowMinusButton);
+    useEffect(function () {
+        setShowMinusButton(
+            forceShowMinusButton || navigator.maxTouchPoints > 0,
+        );
+    });
+
     return (
         <div className={classNames("plus-minus-tray-button", className)}>
             {count !== 0 && <div className="count">{count}</div>}
