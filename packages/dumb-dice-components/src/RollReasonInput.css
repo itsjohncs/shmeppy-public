@@ -1,0 +1,21 @@
+.roll-reason-input {
+    border: 1px solid #007e78;
+    border-radius: 3px;
+    transition: border-color 100ms linear;
+    box-sizing: border-box;
+    background-color: #fff;
+    flex-grow: 1;
+    height: 30px;
+    font-size: 14px;
+    padding-left: 4px;
+    min-width: 0;
+}
+
+.roll-reason-input::placeholder {
+    color: #888;
+}
+
+.roll-reason-input:focus {
+    border-color: #00736d;
+    outline: none;
+}
